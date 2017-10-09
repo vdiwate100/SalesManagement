@@ -2,10 +2,20 @@ package com.org.vd.interpreter;
 
 import com.org.vd.model.Product;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * An abstract implementation for Message Interpreter
+ */
 public abstract class MessageInterpreter {
 	
 	protected abstract Product parser(String[] msgArr);
 	
+	/**
+	 * 
+	 * @param priceStr : Price in the form of String
+	 * @return : double interpretation of price value
+	 */
 	protected double formatPrice(String priceStr) {
         double price = Double.parseDouble(priceStr.replaceAll("p|£", ""));
         if (!priceStr.contains(".")) {
@@ -14,6 +24,11 @@ public abstract class MessageInterpreter {
         return price;
 	}
 	
+	/**
+	 * 
+	 * @param name : Product Name
+	 * @return : Uniformed product name
+	 */
 	protected String formatProductName(String name){
 		if(null == name)
 			return null;

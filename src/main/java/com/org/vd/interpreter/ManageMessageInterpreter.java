@@ -2,8 +2,18 @@ package com.org.vd.interpreter;
 
 import com.org.vd.model.Product;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * Manages Message interpretation : Identify message type and send it for a parsing process
+ */
 public class ManageMessageInterpreter {
 	
+	/**
+	 * 
+	 * @param message : Message to parse
+	 * @return : Parsed Project object
+	 */
 	public Product parseMessage(String message){
 		if (message == null || message.isEmpty()) {
             return null;

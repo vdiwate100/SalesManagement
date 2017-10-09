@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * Sales information artifact which keep information about Itinerary.
+ */
 public class Sale {
 	private Map<String,Product> items;
 	private List<String> adjustmentRepo;
@@ -14,14 +19,11 @@ public class Sale {
 		this.adjustmentRepo = new ArrayList<String>();
 	}
 	
-	public Map<String, Product> getItems() {
-		return items;
-	}
-
-	public void setItems(Map<String, Product> items) {
-		this.items = items;
-	}
-	
+	/**
+	 * Manages Sales Itinerary : Handles Sales inventory and updates respective item in the inventory.
+	 * @param product : Product information
+	 * @return : Success flag
+	 */
 	public boolean manageSalesItinerary(Product product){
 		if(null == product){
 			return false;
@@ -43,6 +45,12 @@ public class Sale {
 		return true;
 	}
 	
+	/**
+	 * Adjustment of price by scrutinising previous and current sales entry
+	 * @param prevEntry : Previous product entry 
+	 * @param product : Current product entry
+	 * @return : Modified Sales object after adjustment
+	 */
 	private Product adjustPrice(Product prevEntry,Product product){
 		double productPrice = product.getPrice();
 		double prevProductPrice = prevEntry.getPrice();
@@ -82,4 +90,11 @@ public class Sale {
 		this.adjustmentRepo = adjustmentRepo;
 	}
 	
+	public Map<String, Product> getItems() {
+		return items;
+	}
+
+	public void setItems(Map<String, Product> items) {
+		this.items = items;
+	}
 }

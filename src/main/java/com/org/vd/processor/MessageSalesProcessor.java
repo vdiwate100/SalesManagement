@@ -12,6 +12,11 @@ import com.org.vd.model.Sale;
 import com.org.vd.report.SalesConsoleReport;
 import com.org.vd.report.SalesReport;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * Sales message processor
+ */
 public class MessageSalesProcessor implements SalesProcessor{
 	
 	private ManageMessageInterpreter manageMessageInterpreter;
@@ -24,6 +29,10 @@ public class MessageSalesProcessor implements SalesProcessor{
 		this.salesReport = new SalesConsoleReport();
 	}
 	
+	/**
+	 * Sales Message processor
+	 * @return : Success flag
+	 */
 	@Override
 	public boolean process() {
 		BufferedReader inputFile = extractSalesMessages();
@@ -57,7 +66,10 @@ public class MessageSalesProcessor implements SalesProcessor{
 		return true;
 	}
 	
-	
+	/**
+	 * Reads input messages from Resources folder
+	 * @return : Buffered stream
+	 */
 	private BufferedReader extractSalesMessages(){
 		ClassLoader classloader = Thread.currentThread().getContextClassLoader();
 		File file = new File(classloader.getResource(ApplicationConstant.INPUT_FILE_NAME).getFile());

@@ -1,5 +1,10 @@
 package com.org.vd.common;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * Repository for application level constants
+ */
 public interface ApplicationConstant {
 	String INPUT_FILE_NAME = "input-manual-channel.txt";
 	int DEFAULT_PRODUCT_QUANTITY = 1;

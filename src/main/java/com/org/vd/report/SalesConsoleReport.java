@@ -5,10 +5,19 @@ import java.util.Map;
 
 import com.org.vd.model.Product;
 
+/**
+ * 
+ * @author vaibhav.diwate
+ * Manage console based sales report
+ */
 public class SalesConsoleReport implements SalesReport{
 
+	/**
+	 * Manage console based report for sales item
+	 * @param message : Sales Repository
+	 */
 	@Override
-	public void productReport(Map<String,Product> items) {
+	public void productReport(Map<String,Product> items){
 		if(null == items){
 			return;
 		}
@@ -28,6 +37,10 @@ public class SalesConsoleReport implements SalesReport{
 		
 	}
 
+	/**
+	 *  Manage console based report for adjustment
+	 *  @param message : Adjustment Repository
+	 */
 	@Override
 	public void productAdjustmentReport(List<String> adjustmentRepo) {
 		if(null == adjustmentRepo){
